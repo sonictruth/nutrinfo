@@ -1,5 +1,7 @@
 # Nutrinfo
 
+Live: https://sonictruth.github.io/nutrinfo/
+
 Mobile-first React web app that tells you whether a food suits your medical
 condition. Type a product name or scan its barcode; Nutrinfo looks the product
 up on [OpenFoodFacts](https://world.openfoodfacts.org/) and asks an

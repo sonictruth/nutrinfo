@@ -1,5 +1,6 @@
 const CACHE = 'nutrinfo-v1'
-const SHELL = ['/', '/manifest.webmanifest', '/icon-192.png', '/icon-512.png']
+const BASE = self.registration.scope
+const SHELL = [BASE, BASE + 'manifest.webmanifest', BASE + 'icon-192.png', BASE + 'icon-512.png']
 
 self.addEventListener('install', (e) => {
   e.waitUntil(caches.open(CACHE).then((c) => c.addAll(SHELL)))
@@ -22,7 +23,7 @@ self.addEventListener('fetch', (e) => {
   if (req.method !== 'GET' || url.origin !== location.origin) return
 
   if (req.mode === 'navigate') {
-    e.respondWith(fetch(req).catch(() => caches.match('/')))
+    e.respondWith(fetch(req).catch(() => caches.match(BASE)))
     return
   }
   e.respondWith(

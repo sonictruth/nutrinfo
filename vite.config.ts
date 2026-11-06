@@ -2,6 +2,7 @@ import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 
 export default defineConfig({
+  base: '/nutrinfo/',
   plugins: [react()],
   server: {
     // `npm run dev -- --host` exposes the dev server on the LAN so a phone can
